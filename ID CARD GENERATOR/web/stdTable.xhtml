@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>data table</title>
+    </h:head>
+    <style>
+       
+        .table{border-collapse: collapse; width: 110%;}
+    </style>
+    <h:body style="background-color:bisque">
+        
+        <div class="form-group" style="display: flex; margin-left: 550px;  margin-top: 60px;">
+            <p class="text "> STUDENT INFORMATION </p>
+        </div>
+        <div class="form-group" style="display: flex; width: 680px; margin:350px; padding:0px; margin-top:0px;">
+
+            <h:dataTable style="padding: 90px" id="users"
+                         columnClasses="list-column-center,
+                         list-column-right, list-column-center,
+                         list-column-right" headerClass="list-header"
+                         rowClasses="list-row"
+                         styleClass="list-background"
+                         value="#{fromdb.userList}"
+                         var="col1"  class="table">   
+                 <h:column>
+                    <f:facet name="header">
+                      ID
+                    </f:facet>
+                    #{col1.id}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                      FullName
+                    </f:facet>
+                    #{col1.fullName   }
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header" class="text-center alert-warning">
+                       DateOfBirth
+                    </f:facet>
+                    #{col1.dateOfBirth }
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                       College
+                    </f:facet>
+                    #{col1.college  }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                       Year
+                    </f:facet>
+                    #{col1.year  }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                       Department
+                    </f:facet>
+                    #{col1.department   }
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">
+                       Address
+                    </f:facet>
+                    #{col1.address}
+                </h:column>
+    
+                 <h:column>
+                    <f:facet name="header">
+                    gender
+                    </f:facet>
+                    #{col1.gender}
+                </h:column>
+                
+                
+            </h:dataTable>
+</div>
+    </h:body>
+</html>
+
